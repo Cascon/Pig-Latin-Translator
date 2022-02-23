@@ -1,4 +1,4 @@
-//variable declarations
+//variable declarations.
 const INPUT_TEXT = document.getElementById("translateText")
 const OUTPUT_BOX = document.getElementById("outputArea")
 const TEXT_AREA = document.getElementsByTagName("textarea")
@@ -7,12 +7,12 @@ const PIG_LATIN_TEXT = document.getElementById("pigLatin").style
 PIG_LATIN_TEXT.left = "348%"
 ENGLISH_TEXT.left = "-10%"
 var toPigLatin = true;
-//translation functions
+//translation functions.
 const pigMe = str =>  punctuationRemover(str.split(' ').map(c =>/[a-zA-Z]+/.test(c) ? c.slice(1)+c[0] +'ay': c).join(' '))
 const unPigMe = str =>  punctuationRemover(str.split(' ').map(c =>/[a-zA-Z]+/.test(c) ? c.charAt(c.length-3) + c.slice(0,-3): c).join(' '))
 const punctuationRemover = str => str.replace(/[.,\/#!$\^&\*;:{}=\-_`~()?]/g,'')
 const translate = () => (toPigLatin) ? OUTPUT_BOX.innerHTML = `${pigMe(INPUT_TEXT.value)}`: OUTPUT_BOX.innerHTML = `${unPigMe(INPUT_TEXT.value)}`
-//user button functions
+//user button functions.
 const clearText = () => {INPUT_TEXT.value = ""; translate()}
 const changeTranslateDirection = () =>
 {

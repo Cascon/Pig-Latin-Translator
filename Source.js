@@ -12,8 +12,8 @@ var toPigLatin = true;
 
 
 //translation functions
-const pigMe = str => str.split(/(\W+)/g).map(c =>/[a-zA-Z]+/.test(c) ? c.slice(1)+c[0] +'ay': c).join('')
-const unPigMe = str =>  str.split(/(\W+)/g).map(c =>/[a-zA-Z]+/.test(c) ? c.charAt(c.length-3) + c.slice(0,-3): c).join('')
+const pigMe = str => str.split(/(\W+)/g).map(c =>/[a-zA-Z']+/.test(c) ? c.slice(1)+c[0] +'ay': c).join('')
+const unPigMe = str =>  str.split(/(\W+)/g).map(c =>/[a-zA-Z']+/.test(c) ? c.charAt(c.length-3) + c.slice(0,-3): c).join('')
 const punctuationRemover = str => str.replace(/[.,\/#!$\^&\*;:{}=\-_`~()?]/g,'')
 const translate = () => (toPigLatin) ? OUTPUT_BOX.innerHTML = `${pigMe(INPUT_TEXT.value)}`: OUTPUT_BOX.innerHTML = `${unPigMe(INPUT_TEXT.value)}`
 //user button functions
